@@ -2,14 +2,9 @@ $(document).ready(function(){
   var conn = new FirebaseConn();
 
   var addVideo = function(key,data){
-    // var link = $('<a>').attr({
-    //                           href: '#',
-    //                           src: data.src,
-    //                           id: key});
-
+    console.info(data);
     var $a = $("<a>"); // need the video page link
-    $a.attr('href', 'http://www.google.com');
-    console.log(data.title);
+    $a.attr('href', 'player.html?key='+key);
     $a.data("src-vid",data.src);
     $a.attr("id",key);
     $a.append('<div class="card-image">' + 
@@ -24,20 +19,6 @@ $(document).ready(function(){
                             '<div class="card-content">' +
                               '<p>Some description about the vid.</p>' +
                             '</div></div></div>');
-      // "<div class='col s4'>
-      //                       <div class='card small'>" + $a + 
-      //                       '<div class="card-image">
-      //           <img src="http://placehold.it/300x300">
-      //           <span class="card-title">'+data.title+'</span>
-      //         </div>
-      //         </a>
-      //         <div class="card-content">
-      //           <p>Some description about the video.</p>
-      //         </div>
-
-      //       </div>
-      //     </div>');
-    // $("ul").append($("<br/>"));
   }
               
 
